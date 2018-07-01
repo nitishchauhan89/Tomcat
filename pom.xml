@@ -4,7 +4,7 @@
  
   <groupId>com.tomcat</groupId>
   <artifactId>tomcat</artifactId>
-  <version>1.0.1-release</version>
+  <version>1.0.2-release</version>
   <packaging>war</packaging>
  
   <name>Maven Quick Start Archetype</name>
@@ -62,7 +62,16 @@
               <skipStaging>true</skipStaging>
            </configuration>
       </plugin>
-
+      <plugin>
+		<groupId>org.apache.tomcat.maven</groupId>
+		<artifactId>tomcat7-maven-plugin</artifactId>
+		<version>2.2</version>
+		<configuration>
+			<url>http://192.168.19.129:8080/manager/html</url>
+			<server>tomcat</server>
+			<path>/myapp</path>
+		</configuration>
+      </plugin>
    </plugins>
   </build>
   <distributionManagement>
